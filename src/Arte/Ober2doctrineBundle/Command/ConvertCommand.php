@@ -21,8 +21,11 @@ class ConvertCommand extends ContainerAwareCommand
             ->setName('arte:ober2doctrine')
             ->setDescription('Convert file from OBER to Doctrine2 YAML')
             ->addArgument('BundleName', InputArgument::REQUIRED, 'bundle name')
-//            ->addArgument('oberFile', InputArgument::REQUIRED, 'ober file')
-//            ->addOption('yell', null, InputOption::VALUE_NONE, 'If set, the task will yell in uppercase letters')
+            ->setHelp(<<<EOT
+convert ober file to yaml file.
+
+EOT
+            )
         ;
     }
 
@@ -45,16 +48,8 @@ class ConvertCommand extends ContainerAwareCommand
 
         if(!$fs->exists($outputFilePath)){
             $fs->mkdir($outputFilePath);
-            $output->writeln(sprintf('"<info>%s</info>" make directory..', $outputFilePath));
+            $output->writeln(sprintf(' > "<info>%s</info>" make directory..', $outputFilePath));
         }
-
-//        echo $outputFilePath;
-
-//        echo $bundle->getNamespace();
-
-
-//        echo $oberFilePath;
-
 
         $oberMng = new OberMng();
         $oberMng->loadFile($oberFilePath);
@@ -65,9 +60,9 @@ class ConvertCommand extends ContainerAwareCommand
         foreach($ret as $key => $value)
         {
             $yaml = Yaml::dump($value, 10);
-//            file_put_contents('C:\project\water_tank\prototype2\source\watertank2\src\Watertank\PublicBundle\Resources\config\doctrine\\'.$key.'.orm.yml', $yaml);
-//            file_put_contents($outputFilePath.'/'.$key.'.orm.yml', $yaml);
-//            echo $outputFilePath.'/'.$key.'.orm.yml';
+            $outputfile = $outputFilePath.'/'.$key.'.orm.yml';
+            file_put_contents($outputfile, $yaml);
+            $output->writeln(sprintf(' > generate "<info>%s</info>"', $outputfile));
         }
 
     }

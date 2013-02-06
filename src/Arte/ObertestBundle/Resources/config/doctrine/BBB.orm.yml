@@ -1,0 +1,15 @@
+Arte\ObertestBundle\Entity\BBB:
+  type: entity
+  indexes: {  }
+  id:
+    bbbid:
+      type: integer
+      generator:
+        strategy: AUTO
+  fields: {  }
+  oneToMany: {  }
+  manyToOne: {  }
+  manyToMany:
+    aaas:
+      targetEntity: AAA
+      mappedBy: bbbs

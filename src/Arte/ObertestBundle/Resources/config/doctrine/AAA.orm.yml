@@ -1,0 +1,23 @@
+Arte\ObertestBundle\Entity\AAA:
+  type: entity
+  indexes: {  }
+  id:
+    aaaid:
+      type: integer
+      generator:
+        strategy: AUTO
+  fields: {  }
+  oneToMany: {  }
+  manyToOne: {  }
+  manyToMany:
+    bbbs:
+      targetEntity: BBB
+      inversedBy: aaas
+      joinTable:
+        name: aaas_bbbs
+        joinColumns:
+          aaaid:
+            referencedColumnName: aaaid
+        inverseJoinColumns:
+          bbbid:
+            referencedColumnName: bbbid
