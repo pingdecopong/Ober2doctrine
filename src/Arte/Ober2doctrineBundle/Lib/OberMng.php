@@ -42,7 +42,7 @@ class OberMng
     public function loadFile($filepath)
     {
 
-        $xml = simplexml_load_file("C:\\project\\symfony2\\ober2doctrine\\doc\\forDoctrine.edm");
+        $xml = simplexml_load_file($filepath);
 
         //テーブル分
         foreach($xml->ENTITY as $entity)
