@@ -3,6 +3,19 @@ app/bootstrap.php.cache
 app/cache/*
 app/logs/*
 build/
-vendor
+vendor/
+bin/
 composer.phar
-.idea
+composer.lock
+app/config/parameters.yml
+mysql-connector*
+
+########## PHP Storm ##########
+.idea/*
+
+########## Mac OS ##########
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
