@@ -1,2 +1,0 @@
-
-Ober2doctrineBundle
