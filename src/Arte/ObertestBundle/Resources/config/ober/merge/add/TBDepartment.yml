@@ -1,0 +1,3 @@
+Arte\ObertestBundle\Entity\TBDepartment:
+    type: mappedSuperclass
+    readOnly: true

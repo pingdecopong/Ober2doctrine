@@ -1,5 +1,4 @@
 Arte\ObertestBundle\Entity\TBDepartment:
-  type: entity
   indexes: {  }
   id:
     id:
@@ -47,3 +46,5 @@ Arte\ObertestBundle\Entity\TBDepartment:
         CreatedUserId:
           referencedColumnName: id
   manyToMany: {  }
+  type: mappedSuperclass
+  readOnly: true
