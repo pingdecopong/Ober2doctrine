@@ -1,0 +1,19 @@
+Arte\ObertestBundle\Entity\TBProduct:
+  type: entity
+  indexes: {  }
+  id:
+    id:
+      type: integer
+      generator:
+        strategy: AUTO
+  fields:
+    Name:
+      type: string
+      length: 255
+      nullable: true
+  oneToMany:
+    TBOrderProductsProductId:
+      targetEntity: TBOrderProduct
+      mappedBy: TBProductProductId
+  manyToOne: {  }
+  manyToMany: {  }

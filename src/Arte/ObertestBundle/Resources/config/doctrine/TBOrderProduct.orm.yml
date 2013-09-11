@@ -1,0 +1,27 @@
+Arte\ObertestBundle\Entity\TBOrderProduct:
+  type: entity
+  indexes: {  }
+  id:
+    OrderId:
+      type: integer
+    ProductId:
+      type: integer
+  fields:
+    Flag:
+      type: integer
+      nullable: true
+  oneToMany: {  }
+  manyToOne:
+    TBOrderOrderId:
+      targetEntity: TBOrder
+      inversedBy: TBOrderProductsOrderId
+      joinColumns:
+        OrderId:
+          referencedColumnName: id
+    TBProductProductId:
+      targetEntity: TBProduct
+      inversedBy: TBOrderProductsProductId
+      joinColumns:
+        ProductId:
+          referencedColumnName: id
+  manyToMany: {  }
